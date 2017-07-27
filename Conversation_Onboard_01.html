@@ -16,7 +16,11 @@
 
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+
 
 
 
@@ -71,13 +75,13 @@ Is this correct?
 
 If Mabu knows this information, skip to [[Medication dosage]]
 
-[[Patient answers any version of daily -&gt;Medication dosage]] 
+[[I take the medication daily. -&gt;Medication dosage]] 
 
-[[Patient answers Once per week -&gt;Once Per Week]]
+[[I take the medication once a week. -&gt;Once Per Week]]
 
-[[Patient answers multiple days, but not every day -&gt;Multiple Days]]
+[[I take the medication multiple days, not every day. -&gt;Multiple Days]]
 
-[[Patient answers with different doses on different days -&gt;Multiple Doses]]</tw-passagedata><tw-passagedata pid="17" name="Mabu confirms statement" tags="" position="1313,1681">Great, let&#x27;s confirm.  Mabu repeats.
+[[I take different doses on different days. -&gt;Multiple Doses]]</tw-passagedata><tw-passagedata pid="17" name="Mabu confirms statement" tags="" position="1313,1681">Great, let&#x27;s confirm.  Mabu repeats.
 
 [[Patient confirms-&gt;Medication Nickname]]</tw-passagedata><tw-passagedata pid="18" name="Patient answered with object" tags="" position="1096,1749">Do you take it before or after or together (object)?
 
@@ -97,25 +101,25 @@ If Mabu knows this information, skip to [[Medication dosage]]
 [[Patient answers-&gt;Mabu confirms medication name]] </tw-passagedata><tw-passagedata pid="25" name="Don&#x27;t forget" tags="" position="1841,1671">Don&#x27;t forget to tell me about your medications when they change.
 
 
-Now, would you like to focus on grouping your medications to help you remember them?</tw-passagedata><tw-passagedata pid="26" name="Once Per Week" tags="" position="1282,12">[[If patient already specified which day --&gt;What time?]]
+Now, would you like to focus on grouping your medications to help you remember them?</tw-passagedata><tw-passagedata pid="26" name="Once Per Week" tags="" position="1282,12">[[If patient already specified which day -&gt;What time?]]
 
-What day(s) do you take [MedicationName]?
-[[Single day of the week --&gt;What time?]]
-[[Multiple days --&gt;Multiple Days]]</tw-passagedata><tw-passagedata pid="27" name="Multiple Days" tags="" position="1379,243">(If Mabu knows [MedicationDoseAmount]:)
-[[Which days do you take MedicationDoseAmount? --&gt;What time?]]
+What day of the week do you take (medication name)?
 
-(If Mabu DOES NOT KNOW [MedicationDosageAmount]:)
-[[How much MedicatonName do you take and on which days? --&gt;What time?]]</tw-passagedata><tw-passagedata pid="28" name="Multiple Doses" tags="" position="1560,151">[[If patient already specified doses and days --&gt;What time?]]
+[[Patient answers -&gt;What time?]]</tw-passagedata><tw-passagedata pid="27" name="Multiple Days" tags="" position="1400,220">How much (medication name) do you take and on which days of the week?
 
-Tell me how much you take and on which days you take that amount.
+(If Mabu already knows medication dosage amount:) Which days of the week do you take (medication dosage amount)?
 
-(If patient mentions ONLY ONE set of days/doses, then follow up with:
-And do you take a different amount on another day or days?
+[[Patient answers -&gt;What time?]]</tw-passagedata><tw-passagedata pid="28" name="Multiple Doses" tags="" position="1560,149">Tell me how much you take and on which days of the week you take that amount.
 
-[[If patient says No --&gt;Medication dosage]]
-[[If patient says Yes, go top of this question again --&gt;Multiple Doses]]</tw-passagedata><tw-passagedata pid="29" name="What time?" tags="" position="1041,96">What time do you take [MedicationName] on [Day(s)]?
+If patient already specified doses and days, skip to [[What time?]]
 
-[[(Patient answers) --&gt;Mabu confirms]]</tw-passagedata></tw-storydata>
+[[Patient answers with multiple doses and days-&gt;Medication dosage]] 
+
+[[Patient mentions ONLY ONE set of days or doses]]</tw-passagedata><tw-passagedata pid="29" name="What time?" tags="" position="1041,96">What time do you take (medication name) on (day)?
+
+[[Patient answers -&gt;Mabu confirms]]</tw-passagedata><tw-passagedata pid="30" name="Patient mentions ONLY ONE set of days or doses" tags="" position="1756,176">And do you take a different amount on another day?
+
+[[Yes-&gt;Multiple Doses]] or [[No -&gt;Medication dosage]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
